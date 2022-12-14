@@ -27,11 +27,7 @@ p, h1, h2, h3{
 
 
 /* и элемента с модификатором вида ключ-значение */
-.table__cell_theme_dark {
-  width: 200px;
-  color: white;
-  margin-top: 80px;
-}
+
 .logo {
   width: 228px;
   height: 32px;
@@ -193,9 +189,9 @@ p, h1, h2, h3{
 }
 .table__cell_theme_dark {
   width: 200px;
-  margin-right: 0;
   margin-top: 80px;
-}
+  color: white;
+  }
 .kaufman__triangle{
   width: 877px;
   height: 877px;

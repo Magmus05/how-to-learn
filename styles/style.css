@@ -68,8 +68,6 @@ p, h1, h2, h3{
 }
 .link_color_blue{
   color: #2f80ed;
-  content: \2192;
-  /*!!!!!!!!!!!!!!!!!!!!!! добавить стрелку!!!!!!!!!!!!!!!!!*/
 }
 .header__main-illustration {
   width: 765px;
@@ -150,7 +148,7 @@ p, h1, h2, h3{
 }
 .feynman {
   background: url(../images/feynman.png)left bottom/867px 637px  no-repeat;
-  height: 800px;
+  min-height: 800px; /*если указать как в задании 890px, то внешний вид не будет соответствовать макету, и будет не красиво, поэтому решил так.*/
   background-color: #f2f2f2;
   padding-top: 100px;
   position: relative;
@@ -162,7 +160,7 @@ p, h1, h2, h3{
   font-size: 120px;
 }
 .feynman__subtitle {
-  margin: 70px auto;
+  margin: 70px auto 0 auto;
 }
 .feynman__link {
   color: #2f80ed;

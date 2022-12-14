@@ -245,6 +245,7 @@ p, h1, h2, h3{
 }
 .footer__column-link {
   color: white;
+  display: block;
 }
 .disp_flex_SB{
   display: flex;

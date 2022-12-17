@@ -1,3 +1,4 @@
+*{padding: 0;margin: 0;}
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -8,9 +9,7 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-p, h1, h2, h3{
-  margin: 0;
-}
+
 .header {
   height: 100vh;
   min-height: 600px;
@@ -20,9 +19,7 @@ p, h1, h2, h3{
   display: flex;
   /* выше установили ограничения для секции */
 }
-.link_decoration_none{
-  text-decoration: none;
-}
+
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 
 
@@ -32,26 +29,20 @@ p, h1, h2, h3{
   width: 228px;
   height: 32px;
 }
-.header__logo{
-
+.logo_place_header{
   position: absolute;
   top: 30px;
   left: 64px;
   z-index: 5;
 }
-.text_weight_600{
-  font-weight: 600;
-}
 .header__title {
   width: 730px;
-  font-size: 50px;
+  font-size: 102px;
   line-height: 96px;
+  font-weight: 600;
   align-self: center;
   margin-left: 64px;
   z-index: 4;
-}
-.text_weight_normal{
-  font-weight: normal;
 }
 .header__subtitle {
   width: 388px;
@@ -60,10 +51,16 @@ p, h1, h2, h3{
   left: 64px;
   font-size: 18px;
   line-height: 25px;
+  font-weight: normal;
   z-index: 3;
 }
-.link_color_blue{
+.header__link{
   color: #2f80ed;
+  text-decoration: none;
+}
+.header__link:hover{
+  text-decoration: underline;
+  color: #003882;
 }
 .header__main-illustration {
   width: 765px;
@@ -72,6 +69,8 @@ p, h1, h2, h3{
   bottom: 0;
   right: 0;
   z-index: 2;
+  object-fit: contain;
+  object-position: bottom right;
 }
 .header__square-pic {
   width: 568px;
@@ -82,50 +81,59 @@ p, h1, h2, h3{
   right: 0;
   z-index: 1;
 }
-.main-illustration__img{
-  width: 100%;
-  height: 100%;
-}
+
 .two-columns {
   width: 80%;
   margin: 100px auto;
+  display: flex;
+  justify-content: space-between;
 }
 .two-columns__brief {
   width: 175px;
   line-height: 1.2;
   font-size: 18px;
-
+  font-weight: normal;
   color: #2f80ed;
 }
 .two-columns__main-text {
   width: 80%;
   min-width: 784px;
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 .two-columns__paragraph {
   line-height: 34px;
   font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 30px;
 }
-.margin-30px{
-  margin: 30px 0;
+.two-columns__paragraph:last-child{
+  margin-bottom: 0;
 }
-.centered-text{
-  text-align: center;
+.two-columns__span-accent{
+  font-weight: 600;
 }
 .section-title {
   width: 60%;
   line-height: 1.15;
   font-size: 60px;
+  font-weight: 600;
   margin: 0 auto;
+  text-align: center;
 }
 .section-subtitle {
   width: 60%;
   line-height: 34px;
   font-size: 24px;
+  font-weight: normal;
   margin: 20px auto 0 auto;
+  text-align: center;
 }
 .table {
   width: 1100px;
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto 100px auto;
 }
@@ -136,6 +144,7 @@ p, h1, h2, h3{
 .table__heading {
   line-height: 1.15;
   font-size: 24px;
+  font-weight: 600;
 }
 .table__text {
   line-height: 1.2;
@@ -144,30 +153,42 @@ p, h1, h2, h3{
 }
 .feynman {
   background: url(../images/feynman.png)left bottom/867px 637px  no-repeat;
-  min-height: 800px; /*если указать как в задании 890px, то внешний вид не будет соответствовать макету, и будет не красиво, поэтому решил так.*/
+  min-height: 890px;
   background-color: #f2f2f2;
   padding-top: 100px;
   position: relative;
+  box-sizing: border-box;
 }
 .feynman__title {
   width: 648px;
   margin: 0 auto;
   line-height: 1.15;
   font-size: 120px;
+  font-weight: 600;
+  text-align: center;
 }
 .feynman__subtitle {
   margin: 70px auto 0 auto;
+  font-weight: normal;
+  text-align: center;
+  line-height: 51px;
+  font-size: 36px;
 }
 .feynman__link {
   color: #2f80ed;
   position: absolute;
   top: 50%;
   right: 48px;
-}
-.feynman_text_m{
+  text-decoration: none;
   line-height: 51px;
   font-size: 36px;
 }
+
+.header__link:hover, .feynman__link:hover{
+  text-decoration: underline;
+  color: #003882;
+}
+
 .kaufman {
   background-color: #1f1f1f;
   position: relative;
@@ -195,6 +216,7 @@ p, h1, h2, h3{
 .kaufman__triangle{
   width: 877px;
   height: 877px;
+  background: url(../images/kaufman-triangle.svg)0 0 /877px 877px no-repeat;
   position: absolute;
   top: 0;
   right: -210px;
@@ -203,27 +225,37 @@ p, h1, h2, h3{
 .footer {
   background-color: #1f1f1f;
   padding: 60px 0 40px 0;
+  box-sizing: border-box;
 }
 .footer__columns {
   width: 90%;
-  min-height: 350px;
+  min-height: 250px;
   margin: 0 auto;
   color: white;
   font-size: 18px;
+  display: flex;
+  justify-content: space-between;
 }
 .footer__column_content_copyright {
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
   flex-basis: 711px;
 }
 .footer__author {
   margin: 18px 0;
   line-height: 25px;
+  font-weight: normal;
 }
 .footer__column_content_info {
   line-height: 30px;
 }
-.footer_column-links {
+.footer__column-heading{
+  font-weight: 600;
+}
+.footer__column-links {
   margin: 20px 0 16px 0;
+  font-weight: normal;
 }
 .footer__column_content_social {
   line-height: 30px;
@@ -231,23 +263,14 @@ p, h1, h2, h3{
 .footer__social-icon {
   width: 16px;
   height: 16px;
-  display: inline-block;
   padding-right: 10px;
-}
-.footer__social-icon_YouTube{
-  background: url(../images/youtube-icon.svg) 0 0 no-repeat;
-}
-.footer__social-icon_VK{
-  background: url(../images/vk_color_white.svg) 0 0 no-repeat;
-}
-.footer__social-icon_TikTok{
-  background: url(../images/tiktok-icon.svg) 0 0 no-repeat;
 }
 .footer__column-link {
   color: white;
   display: block;
+  text-decoration: none;
 }
-.disp_flex_SB{
-  display: flex;
-  justify-content: space-between;
+.footer__column-link:hover{
+  text-decoration: underline;
+  color: rgb(173, 173, 173);
 }

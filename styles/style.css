@@ -229,7 +229,7 @@
 }
 .footer__columns {
   width: 90%;
-  min-height: 250px;
+  height: 250px;
   margin: 0 auto;
   color: white;
   font-size: 18px;
